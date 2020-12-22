@@ -1,0 +1,26 @@
+
+<fieldset>
+  <div class="idB">
+    <label for="idBenutzer">Your Player Id</label>
+    <input type="number" id="idBenutzer" name="idBenutzer" placeholder="Deine Id">
+  </div>
+
+<div class="username">
+  <label for="username">Username</label>
+  <input type="text" id="username" name="username" placeholder="Dein Username">
+</div>
+
+<div class="password">
+  <label for="password">Passwort</label>
+  <input type="password" id="password" name="password" placeholder="Password">
+</div>
+
+<div class="passwordWh">
+  <label for="passwordWh">Passwort wiederholen</label>
+  <input type="password" id="passwordWh" name="passwordWh" placeholder="Passwort wiederholen">
+</div>
+</fieldset>
+
+<fieldset>
+  <button type="submit" name="register" (click)="register('idBenutzer', 'username', 'password', 'passwordWh')"></button>
+</fieldset>

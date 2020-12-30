@@ -1,12 +1,15 @@
-<mat-toolbar color="primary" xmlns="http://www.w3.org/1999/html">
-  <h1>
-    BeatYourFriends
-  </h1>
-  <button mat-button routerLink="/">Home</button>
-  <button mat-button routerLink="/about">About</button>
-</mat-toolbar>
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="user">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
+    <a class="nav-item nav-link" (click)="logout()">Logout</a>
+  </div>
+</nav>
 
-<div class="login">
-  <app-login></app-login>
+<!-- main app container -->
+<div class="app-container" [ngClass]="{ 'bg-light': user }">
+  <alert></alert>
+  <router-outlet></router-outlet>
 </div>
 

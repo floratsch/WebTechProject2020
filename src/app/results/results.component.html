@@ -9,9 +9,6 @@
 
     </div>
   </mat-card>
-  <div *ngFor="let a of answers.values; let i=index" [ngClass]="{correct: a.correct}">
-    <p class="result" >{{a.correct ? user.gameScore+1 : user.gameScore+0}}Your Score is {{user.gameScore}}</p>
-  </div>
 </div>
 <div class="center">
   <a routerLink="/startGame">

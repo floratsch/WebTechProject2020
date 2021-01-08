@@ -22,6 +22,7 @@ async function authenticate({ username, password }) {
   // authentication successful
   const token = jwt.sign({ sub: user.id }, config.secret, { expiresIn: '7d' });
   return { ...omitHash(user.get()), token };
+  console.log(token);
 }
 
 async function getAll() {
@@ -85,3 +86,12 @@ function omitHash(user) {
   const {hash, ...userWithoutHash} = user;
   return userWithoutHash;
 }
+
+// searching for friends
+async function getUserByName(username) {
+  const user = await db.User.findAll(username);
+  if (!user) throw 'User not found.';
+  return user;
+}
+
+

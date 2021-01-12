@@ -9,8 +9,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
-// api routes
+// routes
 app.use('/users', require('./users/users.controller'));
+app.use('/friendlists/*', require('./friendlists/friendlists.controller'));
+
 
 // start server
 const port =  4000;

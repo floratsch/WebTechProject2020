@@ -6,7 +6,7 @@ const validateRequest = require('_middleware/validate-request');
 const authorize = require('_middleware/authorize')
 const userService = require('./user.service');
 
-// routes
+/** routes for user **/
 router.post('/authenticate', authenticateSchema, authenticate);
 router.post('/register', registerSchema, register);
 router.get('/', authorize(), getAll);
@@ -54,7 +54,7 @@ function getAll(req, res, next) {
 }
 
 function getCurrent(req, res, next) {
-  res.json(req.user);
+  res.json(req.user.id);
 }
 
 function getById(req, res, next) {
@@ -84,3 +84,6 @@ function _delete(req, res, next) {
     .then(() => res.json({ message: 'User deleted successfully' }))
     .catch(next);
 }
+
+
+

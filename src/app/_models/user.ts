@@ -7,3 +7,9 @@ export class User {
   lastName: string;
   token: string;
 }
+
+export class Friend {
+  userid: string;
+  friendid: string;
+  hasaccepted: string;
+}

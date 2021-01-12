@@ -1,7 +1,27 @@
 
-<h1>Type in Username</h1>
+<h1>Add Friends</h1>
 <div>
-  <input type="text" id="friendname" name="friendname">
-  <input type="button" (click)="findFriend()" value="search">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th style="width: 30%">Id</th>
+      <th style="width: 30%">First Name</th>
+      <th style="width: 30%">Last Name</th>
+      <th style="width: 30%">Username</th>
+      <th style="width: 10%"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.id}}</td>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.username}}</td>
+      <td>
+        <button (click)="addFriend()">ADD</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </div>
 

@@ -10,7 +10,7 @@ module.exports = {
   getById,
   create,
   update,
-  delete: _delete
+  delete: _delete,
 };
 
 async function authenticate({ username, password }) {
@@ -87,11 +87,6 @@ function omitHash(user) {
   return userWithoutHash;
 }
 
-// searching for friends
-async function getUserByName(username) {
-  const user = await db.User.findAll(username);
-  if (!user) throw 'User not found.';
-  return user;
-}
+
 
 

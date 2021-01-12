@@ -4,11 +4,18 @@ import { Routes, RouterModule } from '@angular/router';
 import {FriendrequestComponent} from '@app/friends/friendrequest.component';
 
 
+
+
 const routes: Routes = [
   {
     path: '', component: FriendrequestComponent,
+    children: [
+
+      ]
   }
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

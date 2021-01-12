@@ -1,10 +1,12 @@
 
+<h1 *ngIf="isAddMode">Add User</h1>
+
 <!--
 if edit button is clicked
 -->
-<h1 *ngIf="isAddMode">Add User</h1>
 <h1 *ngIf="!isAddMode">Edit User</h1>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
   <div class="form-row">
     <div class="form-group col">
       <label for="firstName">First Name</label>
@@ -13,6 +15,8 @@ if edit button is clicked
         <div *ngIf="f.firstName.errors.required">First Name is required</div>
       </div>
     </div>
+
+
 
     <div class="form-group col">
       <label for="lastName">Last Name</label>
@@ -23,6 +27,7 @@ if edit button is clicked
     </div>
   </div>
 
+
   <div class="form-row">
     <div class="form-group col">
       <label for="username">Username</label>
@@ -31,6 +36,7 @@ if edit button is clicked
         <div *ngIf="f.username.errors.required">Username is required</div>
       </div>
     </div>
+
 
     <div class="form-group col">
       <label for="password">
@@ -44,6 +50,7 @@ if edit button is clicked
       </div>
     </div>
   </div>
+
 
   <div class="form-group">
     <button [disabled]="loading" class="btn btn-primary">
